@@ -4,79 +4,20 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
          http://java.sun.com/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-    <display-name>Application pour teste le collaboration entre des servlets</display-name>
+    <display-name>Application pour teste de framework</display-name>
 
     <!-- ***** CSS ***** -->
     <servlet-mapping>
         <servlet-name>default</servlet-name>
         <url-pattern>/assets/*</url-pattern>
     </servlet-mapping>
-    <!-- ********* TRAITEMENTS ************** -->
-
-    <!-- <servlet>
-        <servlet-name>CreditServlet</servlet-name>
-        <servlet-class>servlet.CreditServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>CreditServlet</servlet-name>
-        <url-pattern>/credit</url-pattern>
-    </servlet-mapping> -->
-    
+    <!-- ********* Rooter ************** -->
     <servlet>
-        <servlet-name>DepartementServlet</servlet-name>
-        <servlet-class>servlet.DepartementServlet</servlet-class>
+        <servlet-name>rooter</servlet-name>
+        <servlet-class>jframework.servlet.RooterServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>DepartementServlet</servlet-name>
-        <url-pattern>/departement</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>EmployerServlet</servlet-name>
-        <servlet-class>servlet.EmployerServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>EmployerServlet</servlet-name>
-        <url-pattern>/employer</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>servlet.LoginServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>LoginServlet</servlet-name>
-        <url-pattern>/traitement_login</url-pattern>
-    </servlet-mapping>
-
-    <!-- ********************************** -->
-
-    <!-- ************ ROUTERS ********************* -->
-
-    <servlet>
-        <servlet-name>FormEmpServlet</servlet-name>
-        <servlet-class>servlet.FormEmpServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>FormEmpServlet</servlet-name>
-        <url-pattern>/add-employer</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>ListEmployerServlet</servlet-name>
-        <servlet-class>servlet.ListEmployerServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ListEmployerServlet</servlet-name>
-        <url-pattern>/list-employer</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>PageLoginServlet</servlet-name>
-        <servlet-class>servlet.PageLoginServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>PageLoginServlet</servlet-name>
+        <servlet-name>rooter</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 </web-app>

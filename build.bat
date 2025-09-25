@@ -19,11 +19,10 @@ xcopy "%LIB_DIR%" "%BUILD_DIR%\WEB-INF\lib" /E /I /Y
 REM Compilation des fichiers Java avec le JAR des Servlets et autres dependances
 dir /s /b %SRC_DIR%\*.java > sources.txt
 
-echo " eto mintsy"
 for /f "usebackq delims=" %%f in ("sources.txt") do (
     javac -cp "%LIB_DIR%\*"; -d "%BUILD_DIR%\WEB-INF\classes" "%%f"
 )
-del sources.txt
+@REM del sources.txt
 
 REM Copier les fichiers web
 xcopy %WEB_DIR% %BUILD_DIR% /E /I /Y

@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
          http://java.sun.com/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-    <display-name>Application pour teste le collaboration entre des servlets</display-name>
+    <display-name>Application pour teste de framework</display-name>
 
     <!-- ***** CSS ***** -->
     <servlet-mapping>
@@ -14,10 +14,10 @@
     <!-- ********* Rooter ************** -->
     <servlet>
         <servlet-name>rooter</servlet-name>
-        <servlet-class>servlet.RooterServlet</servlet-class>
+        <servlet-class>jframework.servlet.RooterServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>rooter</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 </web-app>
