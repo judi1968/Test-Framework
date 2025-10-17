@@ -7,10 +7,10 @@
     <display-name>Application pour teste de framework</display-name>
 
     <!-- ***** CSS ***** -->
-    <servlet-mapping>
+    <!-- <servlet-mapping>
         <servlet-name>default</servlet-name>
         <url-pattern>/assets/*</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping> -->
     <!-- ********* Rooter ************** -->
     <servlet>
         <servlet-name>rooter</servlet-name>
@@ -20,4 +20,5 @@
         <servlet-name>rooter</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+
 </web-app>
