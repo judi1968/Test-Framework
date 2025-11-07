@@ -6,7 +6,7 @@ import jframework.qutils.ModelView;
 
 @Controller
 public class VoitureController {
-    @Url("/demarre")
+    @Url("/")
     public String demarrer(){
         return "VrrouUUMM";
     }
