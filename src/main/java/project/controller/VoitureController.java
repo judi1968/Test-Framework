@@ -21,6 +21,8 @@ public class VoitureController {
     @Url("/voiture")
     public ModelView baba(){
         ModelView modelView = new ModelView();
+        modelView.addData("message", "Bonjour tout le monde");
+        modelView.addData("subtitle", "ajouter une voiture");
         modelView.setView("pages/voiture.jsp");
         return modelView ;
     }

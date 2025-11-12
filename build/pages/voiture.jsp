@@ -1,3 +1,7 @@
+<%
+    String message = (String) request.getAttribute("message");
+    String subtitle = (String) request.getAttribute("subtitle");
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +10,8 @@
     <title>Document</title>
 </head>
 <body>
+    <h1><%= message %></h1>
+    <p><%= subtitle %></p>
     <form action="" method="post">
         <input type="text" >
         <button>Ajoute</button>
