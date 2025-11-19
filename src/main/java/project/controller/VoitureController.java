@@ -12,8 +12,10 @@ public class VoitureController {
     }
 
     @Url("/salama")
-    public ModelView akory(){
+    public ModelView akory(int id, String type){
         ModelView modelView = new ModelView();
+        modelView.addData("message", ""+id);
+        modelView.addData("subtitle"," type : "+ type); 
         modelView.setView("pages/voiture.jsp");
         return modelView ;
     }
