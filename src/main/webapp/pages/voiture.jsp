@@ -12,8 +12,9 @@
 <body>
     <h1><%= message %></h1>
     <p><%= subtitle %></p>
-    <form action="" method="post">
-        <input type="text" >
+    <form action="/test_depoloiment/akory" method="post">
+        <input type="int" name="id" placeholder="id">
+        <input type="text" name="baba" placeholder="type">
         <button>Ajoute</button>
     </form>
 </body>
