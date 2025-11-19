@@ -19,10 +19,10 @@ public class VoitureController {
     }
 
     @Url("/voiture/{id}/{type}")
-    public ModelView baba(){
+    public ModelView baba(int id, String type){
         ModelView modelView = new ModelView();
         modelView.addData("message", "Bonjour tout le monde");
-        modelView.addData("subtitle", "yes");
+        modelView.addData("subtitle", "yes "+ id + " type : "+ type); 
         modelView.setView("pages/voiture.jsp");
         return modelView ;
     }

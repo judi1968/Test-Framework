@@ -20,7 +20,7 @@ REM Compilation des fichiers Java avec le JAR des Servlets et autres dependances
 dir /s /b %SRC_DIR%\*.java > sources.txt
 
 for /f "usebackq delims=" %%f in ("sources.txt") do (
-    javac -cp "%LIB_DIR%\*"; -d "%BUILD_DIR%\WEB-INF\classes" "%%f"
+    javac -cp "%LIB_DIR%\*"; -d "%BUILD_DIR%\WEB-INF\classes" -parameters "%%f"
 )
 @REM del sources.txt
 
