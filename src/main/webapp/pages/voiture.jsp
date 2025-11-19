@@ -16,6 +16,5 @@
         <input type="text" >
         <button>Ajoute</button>
     </form>
-    <img src="sasa.jpg" width="250" alt="">
 </body>
 </html>
