@@ -18,11 +18,11 @@ public class VoitureController {
         return modelView ;
     }
 
-    @Url("/voiture")
+    @Url("/voiture/{id}/{type}")
     public ModelView baba(){
         ModelView modelView = new ModelView();
         modelView.addData("message", "Bonjour tout le monde");
-        modelView.addData("subtitle", "ajouter une voiture");
+        modelView.addData("subtitle", "yes");
         modelView.setView("pages/voiture.jsp");
         return modelView ;
     }
