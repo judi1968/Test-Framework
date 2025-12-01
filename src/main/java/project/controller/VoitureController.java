@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.Map;
+
 import jframework.annotation.Controller;
 import jframework.annotation.GetUrl;
 import jframework.annotation.PostUrl;
@@ -48,6 +50,38 @@ public class VoitureController {
         ModelView modelView = new ModelView();
         modelView.addData("message", "Bonjour tout le monde");
         modelView.addData("subtitle", "yes "+ id + " type : "+ type); 
+        modelView.setView("pages/voiture.jsp");
+        return modelView ;
+    }
+
+    @PostUrl("/bm")
+    public ModelView bebe(int id, String type, Map<String, Object> huhu){
+        ModelView modelView = new ModelView();
+        String nom = (String)huhu.get("nom");
+        String prenom = (String)huhu.get("prenom");
+        Object val = huhu.get("baba");
+        String[] baba ;
+        if (val instanceof String[]) {
+            baba = (String[]) val;
+        } else if (val instanceof String) {
+            baba = new String[]{ (String) val };
+        } else {
+            baba = new String[0]; 
+        }
+        String baba2 = "";
+        for (String string : baba) {
+            baba2 += " "+string;
+        } 
+        modelView.addData("message", "Bonjour "+ nom +" " + prenom);
+        modelView.addData("subtitle", "id : "+ id + " type : "+ type+ " checkbox : "+baba2); 
+        modelView.setView("pages/voiture.jsp");
+        return modelView ;
+    }
+
+     @GetUrl("/formulaire")
+    public ModelView formulaire(){
+        ModelView modelView = new ModelView();
+        
         modelView.setView("pages/voiture.jsp");
         return modelView ;
     }
