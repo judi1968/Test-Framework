@@ -20,17 +20,20 @@
 
 
     <p>Check box (sprint 8)</p>
-    <form action="/test_depoloiment/bm" method="get">
+    <form action="/test_depoloiment/bm" method="post">
         <input type="int" name="id" placeholder="id">
         <input type="text" name="type" placeholder="type">
         <input type="text" name="nom" placeholder="nom">
         <input type="text" name="prenom" placeholder="prenom">
 
         <label>Oui</label>
-        <input type="checkbox" name="baba"  placeholder="type">
+        <input type="checkbox" name="baba" value="oui" placeholder="type">
 
         <label>Non</label>
-        <input type="checkbox" name="baba" placeholder="type">
+        <input type="checkbox" name="baba" value="non" placeholder="type">
+
+        <label>Peut etre</label>
+        <input type="checkbox" name="baba"value="peut etre" placeholder="type">
         <button>Ajoute</button>
     </form>
 </body>

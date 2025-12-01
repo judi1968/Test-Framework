@@ -54,18 +54,34 @@ public class VoitureController {
         return modelView ;
     }
 
-    @GetUrl("/bm/{id}/{type}")
+    @PostUrl("/bm")
     public ModelView bebe(int id, String type, Map<String, Object> huhu){
         ModelView modelView = new ModelView();
         String nom = (String)huhu.get("nom");
         String prenom = (String)huhu.get("prenom");
-        String[] baba = (String[])huhu.get("baba");
+        Object val = huhu.get("baba");
+        String[] baba ;
+        if (val instanceof String[]) {
+            baba = (String[]) val;
+        } else if (val instanceof String) {
+            baba = new String[]{ (String) val };
+        } else {
+            baba = new String[0]; 
+        }
         String baba2 = "";
         for (String string : baba) {
             baba2 += " "+string;
         } 
         modelView.addData("message", "Bonjour "+ nom +" " + prenom);
         modelView.addData("subtitle", "id : "+ id + " type : "+ type+ " checkbox : "+baba2); 
+        modelView.setView("pages/voiture.jsp");
+        return modelView ;
+    }
+
+     @GetUrl("/formulaire")
+    public ModelView formulaire(){
+        ModelView modelView = new ModelView();
+        
         modelView.setView("pages/voiture.jsp");
         return modelView ;
     }
