@@ -7,6 +7,7 @@ import jframework.annotation.GetUrl;
 import jframework.annotation.PostUrl;
 import jframework.annotation.Url;
 import jframework.qutils.ModelView;
+import model.Chauffeur;
 import model.Voiture;
 import jframework.annotation.RequestParam;
 
@@ -89,9 +90,14 @@ public class VoitureController {
     }
 
     @PostUrl("/voiture")
-    public ModelView resultatVoiture(Voiture voiture){
+    public ModelView resultatVoiture(Voiture fiara, Chauffeur sofera){
         ModelView modelView = new ModelView();
         
+        if (fiara != null && sofera != null) {
+            modelView.addData("message","mety ka : voiture nom est "+fiara.nom+ " nom an le sofera : "+ fiara.chauffeur.nom);
+        }else {
+            modelView.addData("message","tsa mety");
+        }
         modelView.setView("pages/voiture.jsp");
         return modelView ;
     }

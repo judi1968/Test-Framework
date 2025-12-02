@@ -41,8 +41,8 @@
     <form action="/test_depoloiment/voiture" method="post">
         <input type="int" name="id" placeholder="id">
         <input type="text" name="type" placeholder="type">
-        <input type="text" name="nom" placeholder="nom">
-        <input type="text" name="prenom" placeholder="prenom">
+        <input type="text" name="fiara.nom" placeholder="nom fiara">
+        <input type="text" name="fiara.chauffeur.nom" placeholder="nom an le sofera">
 
         <label>Oui</label>
         <input type="checkbox" name="baba" value="oui" placeholder="type">

@@ -7,5 +7,10 @@ public class Voiture {
     public String prenom;
     public int numero;
     public Date dateSortie;
+    public Chauffeur chauffeur;
+    public Voiture() {
+    }
+
+    
 }
  
