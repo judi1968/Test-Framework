@@ -1,2 +1,0 @@
-D:\IT University\S5\Framework Mr Naina\Test Framework\src\main\java\project\controller\Personne.java
-D:\IT University\S5\Framework Mr Naina\Test Framework\src\main\java\project\controller\VoitureController.java

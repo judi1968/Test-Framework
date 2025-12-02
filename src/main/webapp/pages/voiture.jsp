@@ -36,5 +36,23 @@
         <input type="checkbox" name="baba"value="peut etre" placeholder="type">
         <button>Ajoute</button>
     </form>
+
+    <p>Objet (sprint 8 bis)</p>
+    <form action="/test_depoloiment/voiture" method="post">
+        <input type="int" name="id" placeholder="id">
+        <input type="text" name="type" placeholder="type">
+        <input type="text" name="nom" placeholder="nom">
+        <input type="text" name="prenom" placeholder="prenom">
+
+        <label>Oui</label>
+        <input type="checkbox" name="baba" value="oui" placeholder="type">
+
+        <label>Non</label>
+        <input type="checkbox" name="baba" value="non" placeholder="type">
+
+        <label>Peut etre</label>
+        <input type="checkbox" name="baba"value="peut etre" placeholder="type">
+        <button>Ajoute</button>
+    </form>
 </body>
 </html>
