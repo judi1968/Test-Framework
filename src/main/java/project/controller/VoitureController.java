@@ -1,5 +1,6 @@
 package controller;
 
+import java.sql.Date;
 import java.util.Map;
 
 import jframework.annotation.Controller;
@@ -7,11 +8,14 @@ import jframework.annotation.GetUrl;
 import jframework.annotation.PostUrl;
 import jframework.annotation.Url;
 import jframework.qutils.ModelView;
+import model.Chauffeur;
+import model.Voiture;
+import model.Maison;
 import jframework.annotation.RequestParam;
 
 @Controller
 public class VoitureController {
-    @GetUrl("/")
+    @GetUrl("/") 
     public String demarrer(){
         return "VrrouUUMM";
     }
@@ -59,6 +63,7 @@ public class VoitureController {
         ModelView modelView = new ModelView();
         String nom = (String)huhu.get("nom");
         String prenom = (String)huhu.get("prenom");
+        String aidihy = (String) huhu.get("id");
         Object val = huhu.get("baba");
         String[] baba ;
         if (val instanceof String[]) {
@@ -72,16 +77,44 @@ public class VoitureController {
         for (String string : baba) {
             baba2 += " "+string;
         } 
-        modelView.addData("message", "Bonjour "+ nom +" " + prenom);
+        modelView.addData("message", "Bonjour "+ nom +" " + prenom+ " aidihy "+ aidihy);
         modelView.addData("subtitle", "id : "+ id + " type : "+ type+ " checkbox : "+baba2); 
         modelView.setView("pages/voiture.jsp");
         return modelView ;
     }
 
-     @GetUrl("/formulaire")
+    @GetUrl("/formulaire")
     public ModelView formulaire(){
         ModelView modelView = new ModelView();
         
+        modelView.setView("pages/voiture.jsp");
+        return modelView ;
+    }
+
+    @PostUrl("/voiture")
+    public ModelView resultatVoiture(Voiture fiara, Chauffeur sofera){
+        ModelView modelView = new ModelView();
+        
+        if (fiara != null && sofera != null) {
+            modelView.addData("message","mety ka : voiture nom est "+fiara.nom+ " ; nom an le sofera : "+ fiara.chauffeur.nom + " adresse le trano : " + fiara.chauffeur.maison.adresse);
+            String zanakaSofera = "Reto avy ny zanany : ";
+            for (String zanakaString : sofera.zanaka) {
+                zanakaSofera += zanakaString+", ";
+            }
+
+            zanakaSofera += "<br> laharana : ";
+            for ( int laharana : fiara.chauffeur.laharana) {
+                zanakaSofera += laharana +", ";
+            }
+
+            zanakaSofera += "<br> Daty : ";
+            for (Date daty : fiara.chauffeur.daty) {
+                zanakaSofera += daty.toString() +", ";
+            }
+            modelView.addData("subtitle", zanakaSofera);
+        }else {
+            modelView.addData("message","tsa mety");
+        }
         modelView.setView("pages/voiture.jsp");
         return modelView ;
     }
