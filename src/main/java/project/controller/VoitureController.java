@@ -3,6 +3,7 @@ package controller;
 import java.sql.Date;
 import java.util.Map;
 
+import jframework.annotation.API;
 import jframework.annotation.Controller;
 import jframework.annotation.GetUrl;
 import jframework.annotation.PostUrl;
@@ -93,6 +94,35 @@ public class VoitureController {
 
     @PostUrl("/voiture")
     public ModelView resultatVoiture(Voiture fiara, Chauffeur sofera){
+        ModelView modelView = new ModelView();
+        
+        if (fiara != null && sofera != null) {
+            modelView.addData("message","mety ka : voiture nom est "+fiara.nom+ " ; nom an le sofera : "+ fiara.chauffeur.nom + " adresse le trano : " + fiara.chauffeur.maison.adresse);
+            String zanakaSofera = "Reto avy ny zanany : ";
+            for (String zanakaString : sofera.zanaka) {
+                zanakaSofera += zanakaString+", ";
+            }
+
+            zanakaSofera += "<br> laharana : ";
+            for ( int laharana : fiara.chauffeur.laharana) {
+                zanakaSofera += laharana +", ";
+            }
+
+            zanakaSofera += "<br> Daty : ";
+            for (Date daty : fiara.chauffeur.daty) {
+                zanakaSofera += daty.toString() +", ";
+            }
+            modelView.addData("subtitle", zanakaSofera);
+        }else {
+            modelView.addData("message","tsa mety");
+        }
+        modelView.setView("pages/voiture.jsp");
+        return modelView ;
+    }
+
+    @PostUrl("/voiture-api")
+    @API
+    public ModelView testAPI(Voiture fiara, Chauffeur sofera){
         ModelView modelView = new ModelView();
         
         if (fiara != null && sofera != null) {
