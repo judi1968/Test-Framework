@@ -67,6 +67,7 @@
         <br>
         <label>2</label>
         <input type="checkbox" name="fiara.chauffeur.laharana" value="2">
+
         <br>
         <label>3</label>
         <input type="checkbox" name="fiara.chauffeur.laharana"value="3">
