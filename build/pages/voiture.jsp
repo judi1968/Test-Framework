@@ -43,16 +43,50 @@
         <input type="text" name="type" placeholder="type">
         <input type="text" name="fiara.nom" placeholder="nom fiara">
         <input type="text" name="fiara.chauffeur.nom" placeholder="nom an le sofera">
+        <input type="text" name="fiara.chauffeur.maison.adresse" placeholder="tranon le sofera">
 
-        <label>Oui</label>
-        <input type="checkbox" name="baba" value="oui" placeholder="type">
+        <p>Zanaka sofera</p>
+        <br>
+        <label>Zampol</label>
+        <input type="checkbox" name="sofera.zanaka" value="Zampol" placeholder="type">
 
-        <label>Non</label>
-        <input type="checkbox" name="baba" value="non" placeholder="type">
+        <br>
+        <label>Zamba</label>
+        <input type="checkbox" name="sofera.zanaka" value="Zamba" placeholder="type">
 
+        <br>
         <label>Peut etre</label>
-        <input type="checkbox" name="baba"value="peut etre" placeholder="type">
+        <input type="checkbox" name="sofera.zanaka"value="peut etre" placeholder="type">
+        <br>
+
+        <p>Laharana</p>
+        <br>
+        <label>1</label>
+        <input type="checkbox" name="fiara.chauffeur.laharana" value="1">
+
+        <br>
+        <label>2</label>
+        <input type="checkbox" name="fiara.chauffeur.laharana" value="2">
+        <br>
+        <label>3</label>
+        <input type="checkbox" name="fiara.chauffeur.laharana"value="3">
+        <br>
+
+        <p>Daty</p>
+        <br>
+        <label>1</label>
+        <input type="date" name="fiara.chauffeur.daty" >
+
+        <br>
+        <label>2</label>
+        <input type="date" name="fiara.chauffeur.daty">
+
+        <br>
+        <label>3</label>
+        <input type="date" name="fiara.chauffeur.daty">
+        <br>
+
         <button>Ajoute</button>
     </form>
-</body>
+</body> 
 </html>

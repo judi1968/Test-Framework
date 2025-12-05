@@ -8,6 +8,7 @@ public class Voiture {
     public int numero;
     public Date dateSortie;
     public Chauffeur chauffeur;
+    public Pneu[] pneus;
     public Voiture() {
     }
 
