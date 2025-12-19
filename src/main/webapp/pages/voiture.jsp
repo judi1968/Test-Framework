@@ -87,6 +87,15 @@
         <input type="date" name="fiara.chauffeur.daty">
         <br>
 
+         <p>Pneu []</p>
+        <br>
+        <input type="text" value="p1" name="fiara.pneus[6][3].nom">
+
+        <br>
+        <input type="text" value="p2" name="fiara.pneus[2][7].soferization[4][5][6].nom">
+
+
+
         <button>Ajoute</button>
     </form>
 
@@ -140,6 +149,13 @@
         <input type="date" name="fiara.chauffeur.daty">
         <br>
 
+        <button>Ajoute</button>
+    </form>
+
+
+    <p>Import fichier (sprint 10)</p>
+    <form action="/test_depoloiment/import-file" method="post"enctype="multipart/form-data">
+        <input type="file" name="fiara.sary" required />
         <button>Ajoute</button>
     </form>
 </body> 

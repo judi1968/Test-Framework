@@ -1,5 +1,7 @@
 package model;
 
 public class Pneu {
-    String nom;
+    public String nom;
+    public Chauffeur[][][] soferization;
+    public Pneu(){}
 }
