@@ -3,11 +3,13 @@ package controller;
 import java.sql.Date;
 import java.util.Map;
 
+import jframework.annotation.API;
 import jframework.annotation.Controller;
+import jframework.annotation.FormatApi;
 import jframework.annotation.GetUrl;
 import jframework.annotation.PostUrl;
 import jframework.annotation.Url;
-import jframework.qutils.ModelView;
+import jframework.tools.ModelView;
 import model.Chauffeur;
 import model.Voiture;
 import model.Maison;
@@ -84,7 +86,7 @@ public class VoitureController {
     }
 
     @GetUrl("/formulaire")
-    public ModelView formulaire(){
+    public ModelView formulaire(){ 
         ModelView modelView = new ModelView();
         
         modelView.setView("pages/voiture.jsp");
@@ -92,7 +94,36 @@ public class VoitureController {
     }
 
     @PostUrl("/voiture")
-    public ModelView resultatVoiture(Voiture fiara, Chauffeur sofera){
+    public ModelView resultatVoiture(Voiture fiara, Chauffeur sofera, Map<String, byte[] > attachement){
+        ModelView modelView = new ModelView();
+        
+        if (fiara != null && sofera != null) {
+            modelView.addData("message","mety ka : voiture nom est "+fiara.nom+ " ; nom an le sofera : "+ fiara.chauffeur.nom + " adresse le trano : " + fiara.chauffeur.maison.adresse + " pneu (8 bis) " + (fiara.pneus[2][7].nom) + " : " + fiara.pneus[2][7].soferization[4][5][6].nom);
+            String zanakaSofera = "Reto avy ny zanany : ";
+            for (String zanakaString : sofera.zanaka) {
+                zanakaSofera += zanakaString+", ";
+            }
+
+            zanakaSofera += "<br> laharana : ";
+            for ( int laharana : fiara.chauffeur.laharana) {
+                zanakaSofera += laharana +", ";
+            }
+
+            zanakaSofera += "<br> Daty : ";
+            for (Date daty : fiara.chauffeur.daty) {
+                zanakaSofera += daty.toString() +", ";
+            }
+            modelView.addData("subtitle", zanakaSofera);
+        }else {
+            modelView.addData("message","tsa mety");
+        }
+        modelView.setView("pages/voiture.jsp");
+        return modelView ;
+    }
+
+    @PostUrl("/voiture-api")
+    @API
+    public ModelView testAPI(Voiture fiara, Chauffeur sofera){
         ModelView modelView = new ModelView();
         
         if (fiara != null && sofera != null) {
@@ -117,5 +148,44 @@ public class VoitureController {
         }
         modelView.setView("pages/voiture.jsp");
         return modelView ;
+    }
+
+    @GetUrl("/voiture-api")
+    @API
+    public Voiture testAPIObjet(){
+        Voiture v = new Voiture();
+        v.nom = "volvo";
+        v.numero = 4683;
+        return v ;
+    }
+
+    @GetUrl("/voiture-api-rest")
+    @API(format = FormatApi.REST)
+    public Voiture testAPIObjetRobuste(){
+        Voiture v = new Voiture();
+        v.nom = "volvo";
+        v.numero = 4683;
+        return v ;
+    }
+
+    @GetUrl("/voiture-api-robuste")
+    @API(format = FormatApi.ROBUSTE)
+    public Voiture testAPIObjetRest(){
+        Voiture v = new Voiture();
+        v.nom = "volvo";
+        v.numero = 4683;
+        return v ;
+    }
+
+    @GetUrl("/voiture-api-not")
+    @API(format = FormatApi.ROBUSTE)
+    public ModelView testAPITsyMety(Voiture fiara, Chauffeur sofera) throws Exception{
+        throw new Exception("Tsy mety");
+    }
+
+    @PostUrl("/import-file")
+    public String importFichier(Voiture fiara) throws Exception{
+        fiara.sary.transferTo("D:\\"+fiara.sary.getOriginalFilename());
+        return "Okay"; 
     }
 }

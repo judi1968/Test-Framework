@@ -23,6 +23,6 @@
 
     <!-- listener -->
     <listener>
-        <listener-class>jframework.slistener.JFrameworkStartupListener</listener-class>
+        <listener-class>jframework.listener.JFrameworkStartupListener</listener-class>
     </listener>
 </web-app>

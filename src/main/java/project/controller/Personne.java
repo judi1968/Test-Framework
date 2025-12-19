@@ -2,7 +2,7 @@ package controller;
 
 import jframework.annotation.Controller;
 import jframework.annotation.Url;
-import jframework.qutils.ModelView;
+import jframework.tools.ModelView;
 
 @Controller
 public class Personne {
