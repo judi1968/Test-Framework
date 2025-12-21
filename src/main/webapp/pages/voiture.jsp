@@ -153,10 +153,22 @@
     </form>
 
 
-    <p>Import fichier (sprint 10)</p>
+    <p>Import fichier (sprint 10) : Objet</p>
     <form action="/test_depoloiment/import-file" method="post"enctype="multipart/form-data">
         <input type="file" name="fiara.sary" required />
         <button>Ajoute</button>
+    </form>
+
+    <p>Import fichier (sprint 10) : Map</p>
+    <form action="/test_depoloiment/import-file-map" method="post" enctype="multipart/form-data">
+
+        <label>Photo :</label>
+        <input type="file" name="photo"><br><br>
+
+        <label>Documents :</label>
+        <input type="file" name="documents" multiple><br><br>
+
+        <button type="submit">Envoyer</button> 
     </form>
 </body> 
 </html>
