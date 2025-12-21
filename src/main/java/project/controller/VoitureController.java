@@ -1,6 +1,7 @@
 package controller;
 
 import java.sql.Date;
+import java.util.List;
 import java.util.Map;
 
 import jframework.annotation.API;
@@ -187,5 +188,13 @@ public class VoitureController {
     public String importFichier(Voiture fiara) throws Exception{
         fiara.sary.transferTo("D:\\"+fiara.sary.getOriginalFilename());
         return "Okay"; 
+    }
+
+    @PostUrl("/import-file-map")
+    public String importFichierMap(Map<String, List<byte[]>> fichiers) throws Exception{
+        int numberPhoto = fichiers.get("photo").size();
+        int numberDoc = fichiers.get("documents").size();
+
+        return "Okay "+ numberPhoto + " : " + numberDoc; 
     }
 }
