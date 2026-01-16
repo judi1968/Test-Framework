@@ -170,5 +170,17 @@
 
         <button type="submit">Envoyer</button> 
     </form>
+
+    <p>Session (sprint 11)</p>
+    <form action="/test_depoloiment/session" method="post" enctype="multipart/form-data">
+
+        <label>Votre nom :</label>
+        <input type="text" name="name"><br><br>
+
+        <button type="submit">Envoyer</button> 
+        <a href="/test_depoloiment/session">Qui suis-je ? </a>
+        <br>
+        <a href="/test_depoloiment/supprimer-session">Supprimer mon nom ? </a>
+    </form>
 </body> 
 </html>

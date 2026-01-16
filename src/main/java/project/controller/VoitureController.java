@@ -10,6 +10,7 @@ import jframework.annotation.FormatApi;
 import jframework.annotation.GetUrl;
 import jframework.annotation.PostUrl;
 import jframework.annotation.Url;
+import jframework.session.Session;
 import jframework.tools.ModelView;
 import model.Chauffeur;
 import model.Voiture;
@@ -197,4 +198,24 @@ public class VoitureController {
 
         return "Okay "+ numberPhoto + " : " + numberDoc; 
     }
+
+    @PostUrl("/session")
+    public String gestionSession(String name, Session session) throws Exception{
+        session.add("anarana", name);
+        return "Session creer"; 
+    }
+
+    @GetUrl("/supprimer-session")
+    public String supprimerSession(String name, Session session) throws Exception{
+        session.remove("anarana");
+        return "Session supprimer"; 
+    }
+
+    
+    @GetUrl("/session")
+    public String showMySession(Session session) throws Exception{
+        String nom = session.get("anarana");
+        return "Votre nom est "+nom ; 
+    }
+
 }
