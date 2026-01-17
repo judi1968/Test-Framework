@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import jframework.annotation.API;
+import jframework.annotation.Authorized;
 import jframework.annotation.Controller;
 import jframework.annotation.FormatApi;
 import jframework.annotation.GetUrl;
@@ -16,6 +17,7 @@ import model.Chauffeur;
 import model.Voiture;
 import model.Maison;
 import jframework.annotation.RequestParam;
+import jframework.annotation.Role;
 
 @Controller
 public class VoitureController {
@@ -216,6 +218,45 @@ public class VoitureController {
     public String showMySession(Session session) throws Exception{
         String nom = session.get("anarana");
         return "Votre nom est "+nom ; 
+    }
+
+    @GetUrl("/go-authorized")
+    @Authorized 
+    public String pageAuthorized() throws Exception{
+        return "Page besoin authorization" ; 
+    }
+
+    @GetUrl("/se-connecter")
+    public String pageConnection(int id) throws Exception{
+        Session session = new Session();
+        if (id == 1) {
+            session.add("role", "chef");
+            return "Chef connecter" ; 
+        }else{
+            session.add("role", "dir");
+            return "Direction connecter";
+        }
+    }
+
+
+    @GetUrl("/se-deconnecter")
+    public String pageDeconection() throws Exception{
+        Session session = new Session();
+        session.remove("role");
+        return "User deconnecter";
+        
+    }
+
+    @GetUrl("/go-chef")
+    @Role("chef")
+    public String pageChef() throws Exception{
+        return "Page seulement chef" ; 
+    }
+
+    @GetUrl("/go-all")
+    @Role("chef, dir")
+    public String pageChefAndDir() throws Exception{
+        return "Page seulement chef et dir" ; 
     }
 
 }

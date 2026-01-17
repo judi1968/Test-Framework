@@ -182,5 +182,18 @@
         <br>
         <a href="/test_depoloiment/supprimer-session">Supprimer mon nom ? </a>
     </form>
+
+    <p>Authorisation et role </p>
+    <a href="/test_depoloiment/se-connecter?id=1">Se connecter chef</a>
+    <br>
+    <a href="/test_depoloiment/se-connecter?id=2">Se connecter direction</a>
+    <br>
+    <a href="/test_depoloiment/se-deconnecter">Deconnection</a>
+    <br>
+    <a href="/test_depoloiment/go-authorized">Seulement authorized</a>
+    <br>
+    <a href="/test_depoloiment/go-chef">Seulement chef</a>
+    <br>
+    <a href="/test_depoloiment/go-all">Wifi Mibanaka</a>
 </body> 
 </html>
