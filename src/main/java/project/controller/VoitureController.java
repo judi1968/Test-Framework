@@ -227,21 +227,21 @@ public class VoitureController {
     }
 
     @GetUrl("/se-connecter")
-    public String pageConnection(int id) throws Exception{
-        Session session = new Session();
+    public String pageConnection(int id, Session session) throws Exception{
         if (id == 1) {
             session.add("role", "chef");
+             System.out.println((String)session.get("role"));
             return "Chef connecter" ; 
         }else{
             session.add("role", "dir");
-            return "Direction connecter";
+            System.out.println((String)session.get("role"));
+            return "Direction connecter"; 
         }
     }
 
 
     @GetUrl("/se-deconnecter")
-    public String pageDeconection() throws Exception{
-        Session session = new Session();
+    public String pageDeconection(Session session) throws Exception{
         session.remove("role");
         return "User deconnecter";
         

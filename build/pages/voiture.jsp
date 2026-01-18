@@ -194,6 +194,6 @@
     <br>
     <a href="/test_depoloiment/go-chef">Seulement chef</a>
     <br>
-    <a href="/test_depoloiment/go-all">Wifi Mibanaka</a>
+    <a href="/test_depoloiment/go-all">Chef et dir</a>
 </body> 
 </html>
