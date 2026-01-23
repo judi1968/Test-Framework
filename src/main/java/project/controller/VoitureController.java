@@ -15,6 +15,7 @@ import jframework.session.Session;
 import jframework.tools.ModelView;
 import model.Chauffeur;
 import model.Voiture;
+import model.session.UserSession;
 import model.Maison;
 import jframework.annotation.RequestParam;
 import jframework.annotation.Role;
@@ -229,12 +230,14 @@ public class VoitureController {
     @GetUrl("/se-connecter")
     public String pageConnection(int id, Session session) throws Exception{
         if (id == 1) {
-            session.add("role", "chef");
-             System.out.println((String)session.get("role"));
+            UserSession userSession = new UserSession();
+            userSession.setRole("chef");
+            session.add("role", userSession);
             return "Chef connecter" ; 
         }else{
-            session.add("role", "dir");
-            System.out.println((String)session.get("role"));
+            UserSession userSession = new UserSession();
+            userSession.setRole("dir");
+            session.add("role", userSession);
             return "Direction connecter"; 
         }
     }
